@@ -1,4 +1,18 @@
 - commits:
+    - subject: Restore versioned source steps
+      hash: 2d3c202169079404c84e6e00ed41a62e273e4a68
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+  version: 7.0.19
+  title: ""
+  date: 2024-01-26T17:58:04.826Z
+- commits:
     - subject: Update actions/upload-artifact action to v4.3.0
       hash: 61d1b92ed4f4e0df276bc3b6fd4f142b70b1ea23
       body: |
