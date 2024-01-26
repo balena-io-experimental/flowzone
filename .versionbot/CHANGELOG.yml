@@ -1,4 +1,18 @@
 - commits:
+    - subject: Remove GPT review features
+      hash: 4b7edbf85caabd060087144184d8cf4f8616d2ed
+      body: ""
+      footer:
+        Change-type: major
+        change-type: major
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+  version: 8.0.0
+  title: ""
+  date: 2024-01-26T20:51:40.159Z
+- commits:
     - subject: Restore versioned source steps
       hash: 2d3c202169079404c84e6e00ed41a62e273e4a68
       body: ""
