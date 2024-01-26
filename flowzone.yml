@@ -1129,7 +1129,20 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ steps.gh_app_token.outputs.token || secrets.FLOWZONE_TOKEN }}
         run: |
-          date > now
+          out="$(balena-versionist 2>&1)"
+          error="$(awk '/Error:/{getline; print}' <<< "${out}")"
+
+          case ${error} in
+            "") # no error
+              ;;
+            'No such file or directory'*'/package.json')
+              echo "::error file=.versionbot/CHANGELOG.yml,line=1::Versionist expects a package.json if repo.yml does not provide a 'type' for the project"
+              ;;
+            *)
+              echo "::error::${error}"
+              exit 1
+              ;;
+          esac
 
           git status --porcelain
 
@@ -1230,7 +1243,7 @@ jobs:
 
       # https://docs.github.com/en/rest/git/refs?apiVersion=2022-11-28#update-a-reference
       - name: Update branch reference
-        # if: github.event.pull_request.merged == true && steps.create_commit.outputs.sha != ''
+        if: github.event.pull_request.merged == true && steps.create_commit.outputs.sha != ''
         env:
           GH_TOKEN: ${{ steps.gh_app_token.outputs.token || secrets.FLOWZONE_TOKEN }}
         run: |
