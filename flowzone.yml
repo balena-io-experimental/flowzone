@@ -1072,7 +1072,6 @@ jobs:
           # admin permission is currently required to bypass branch protection rules
           permissions: >-
             {
-              "administration": "write",
               "contents": "write",
               "metadata": "read",
               "pull_requests": "read"
