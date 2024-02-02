@@ -1,4 +1,34 @@
 - commits:
+    - subject: Enable automerge regardless of branch protection rules
+      hash: 8d13738282140342c31d93ebeb8ed9da098dc15d
+      body: |
+        Without the --admin flag there should be no chance of
+        accidentally bypassing branch protection rules.
+
+        See: https://cli.github.com/manual/gh_pr_merge
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+    - subject: Drop admin permissions from versioned source job
+      hash: 41ed7a75600282b729bc2df5955ad95a8490456d
+      body: |
+        Rulesets on this org have exceptions for the flowzone-app
+        user to bypass branch protections.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+  version: 8.0.2
+  title: ""
+  date: 2024-02-02T16:22:49.943Z
+- commits:
     - subject: Avoid failing workflow when branch is unprotected
       hash: 840e041136911e385025a3f9227376b2471949bc
       body: ""
