@@ -367,8 +367,15 @@ jobs:
           fi
       - name: Log GitHub context
         env:
+          GH_DEBUG: "true"
+          GH_PAGER: cat
+          GH_PROMPT_DISABLED: "true"
+          GH_REPO: ${{ github.repository }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_CONTEXT: ${{ toJSON(github) }}
-        run: echo "${GITHUB_CONTEXT}" || true
+        run: |
+          gh pr checks ${{ github.event.pull_request.number }} --required || true
+          echo "${GITHUB_CONTEXT}" || true
   versioned_source:
     name: Versioned source
     runs-on: ${{ fromJSON(inputs.runs_on) }}

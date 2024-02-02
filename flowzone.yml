@@ -238,8 +238,11 @@
   - &logGitHubContext
     name: Log GitHub context
     env:
+      <<: *gitHubCliEnvironment
       GITHUB_CONTEXT: ${{ toJSON(github) }}
-    run: echo "${GITHUB_CONTEXT}" || true
+    run: |
+      gh pr checks ${{ github.event.pull_request.number }} --required || true
+      echo "${GITHUB_CONTEXT}" || true
 
   - &deleteDraftGitHubRelease
     name: Delete draft GitHub release
