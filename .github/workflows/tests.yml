@@ -36,7 +36,7 @@ permissions:
 jobs:
   flowzone:
     name: Flowzone
-    uses: ./.github/workflows/flowzone.yml
+    uses: product-os/flowzone/.github/workflows/flowzone.yml@kyle/versioning-scripts
     # prevent duplicate workflow executions for pull_request and pull_request_target
     if: |
       (
@@ -49,15 +49,6 @@ jobs:
     secrets: inherit
     with:
       working_directory: ./tests
-      docker_images: |
-        ghcr.io/product-os/flowzone
-      balena_slugs: |
-        product_os/flowzone
-      cargo_targets: |
-        x86_64-unknown-linux-gnu,
-        armv7-unknown-linux-gnueabi,
-        aarch64-unknown-linux-gnu
-      cloudflare_website: "flowzone"
       bake_targets: default,multiarch
       jobs_timeout_minutes: 30
       docker_publish_platform_tags: true
