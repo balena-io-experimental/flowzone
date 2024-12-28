@@ -1,4 +1,16 @@
 - commits:
+    - subject: Test Flowzone branch kyle/versioning-scripts
+      hash: b0f2b6af9b950cc28181122ec1a48b8ba2b457c4
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Kyle Harding
+      nested: []
+  version: 19.2.17
+  title: ""
+  date: 2024-12-28T17:20:27.333Z
+- commits:
     - subject: Update rhysd/actionlint Docker tag to v1.7.5
       hash: 75c6ab2ed1d3fee219c9b81e089abe6116a66c82
       body: |
