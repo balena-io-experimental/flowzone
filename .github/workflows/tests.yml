@@ -36,7 +36,7 @@ permissions:
 jobs:
   flowzone:
     name: Flowzone
-    uses: ./.github/workflows/flowzone.yml
+    uses: product-os/flowzone/.github/workflows/flowzone.yml@kyle/npm-download
     # prevent duplicate workflow executions for pull_request and pull_request_target
     if: |
       (
