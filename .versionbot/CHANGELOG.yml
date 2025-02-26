@@ -1,4 +1,21 @@
 - commits:
+    - subject: Remove admin:write from the versioning token scopes
+      hash: 0bff13bf09ad8fd9c76d424ccb3ed18c74cd8bd9
+      body: |
+        With the correct branch rulesets in place we should
+        be able to make exceptions for the app, rather than
+        rely on adminstrator access.
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+  version: 19.10.0
+  title: ""
+  date: 2025-02-26T18:15:52.017Z
+- commits:
     - subject: Update docker/setup-buildx-action action to v3.10.0
       hash: f66e632ecf6fe161fb0fdcfcc596b64264a1f003
       body: |
