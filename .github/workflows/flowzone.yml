@@ -307,22 +307,6 @@ jobs:
             event_action: ${{ github.event.action }}
     permissions: {}
     steps:
-      - name: Reject external pull_request events on pull_request
-        if: |
-          github.event_name == 'pull_request' &&
-          github.event.pull_request.head.repo.full_name != github.repository
-        run: |
-          echo "::error::External workflows can not be used with 'pull_request' events. \
-            Please contact a member of the organization for assistance."
-          exit 1
-      - name: Reject internal pull_request events on pull_request_target
-        if: |
-          github.event_name == 'pull_request_target' &&
-          github.event.pull_request.head.repo.full_name == github.repository
-        run: |
-          echo "::error::Internal workflows should not be used with 'pull_request_target' events. \
-            Please consult the documentation for more information."
-          exit 1
       - name: Reject missing secrets
         run: |
           if [ -z '${{ secrets.FLOWZONE_TOKEN }}${{ secrets.GH_APP_PRIVATE_KEY }}' ]
