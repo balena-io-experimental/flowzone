@@ -178,6 +178,7 @@
   - &updateVersionedTagRef
     name: Update versioned tag reference
     if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
+    shell: bash --noprofile --norc -eo pipefail -x {0}
     env:
       TAG: ${{ needs.versioned_source.outputs.tag }}
       SHA: ${{ needs.versioned_source.outputs.tag_sha }}
