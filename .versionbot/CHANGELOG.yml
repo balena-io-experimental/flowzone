@@ -1,4 +1,18 @@
 - commits:
+    - subject: Fetch all tags for testing
+      hash: 24af05df30ebddbd876554d9168b73615e156922
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+  version: 20.4.2
+  title: ""
+  date: 2025-06-05T17:11:06.372Z
+- commits:
     - subject: Force full depth for testing
       hash: df96e85f203f72207f897304bd1b53db88f970f3
       body: ""

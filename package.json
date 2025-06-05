@@ -17,8 +17,8 @@
   "dependencies": {
     "yaml": "^2.1.3"
   },
-  "version": "20.4.1",
+  "version": "20.4.2",
   "versionist": {
-    "publishedAt": "2025-06-05T16:48:33.831Z"
+    "publishedAt": "2025-06-05T17:11:06.976Z"
   }
 }
