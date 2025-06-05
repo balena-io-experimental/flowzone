@@ -1048,7 +1048,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -1103,7 +1103,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -1245,7 +1245,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -1314,7 +1314,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -1464,7 +1464,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -1734,7 +1734,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -1846,7 +1846,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -1924,7 +1924,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -1991,7 +1991,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -2167,7 +2167,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -2376,7 +2376,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -2509,7 +2509,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -2751,7 +2751,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -3290,7 +3290,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -3532,7 +3532,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -3610,7 +3610,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -3710,7 +3710,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -3806,7 +3806,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -3888,7 +3888,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -3959,7 +3959,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -4124,7 +4124,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -4224,7 +4224,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -4330,7 +4330,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -4407,7 +4407,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -4500,7 +4500,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -4570,7 +4570,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -4638,7 +4638,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -4734,7 +4734,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -4824,7 +4824,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -4915,7 +4915,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -5001,7 +5001,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
@@ -5089,7 +5089,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         if: needs.versioned_source.outputs.sha
         with:
-          fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+          fetch-depth: 0
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
