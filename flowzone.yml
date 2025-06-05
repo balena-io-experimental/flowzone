@@ -164,7 +164,7 @@
     if: needs.versioned_source.outputs.sha
     with:
       # Should be 0 (full depth) if submodules are present, otherwise 1
-      fetch-depth: ${{ needs.versioned_source.outputs.depth || 0 }}
+      fetch-depth: 0
       # Note that fetch-tags is not currently working as described:
       # https://github.com/actions/checkout/issues/1781
       fetch-tags: false
