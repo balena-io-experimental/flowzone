@@ -1049,7 +1049,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -1104,7 +1104,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -1246,7 +1246,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -1315,7 +1315,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -1465,7 +1465,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -1735,7 +1735,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -1847,7 +1847,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -1925,7 +1925,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -1992,7 +1992,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -2168,7 +2168,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -2377,7 +2377,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -2510,7 +2510,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -2752,7 +2752,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -3291,7 +3291,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -3533,7 +3533,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -3611,7 +3611,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -3711,7 +3711,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -3807,7 +3807,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -3889,7 +3889,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -3960,7 +3960,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -4125,7 +4125,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -4225,7 +4225,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -4331,7 +4331,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -4408,7 +4408,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -4501,7 +4501,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -4571,7 +4571,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -4639,7 +4639,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -4735,7 +4735,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -4825,7 +4825,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -4916,7 +4916,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -5002,7 +5002,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
@@ -5090,7 +5090,7 @@ jobs:
         if: needs.versioned_source.outputs.sha
         with:
           fetch-depth: 0
-          fetch-tags: false
+          fetch-tags: true
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
           token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}

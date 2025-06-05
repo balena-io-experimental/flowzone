@@ -167,7 +167,7 @@
       fetch-depth: 0
       # Note that fetch-tags is not currently working as described:
       # https://github.com/actions/checkout/issues/1781
-      fetch-tags: false
+      fetch-tags: true
       submodules: "recursive"
       ref: ${{ needs.versioned_source.outputs.sha }}
       <<: *checkoutAuth
