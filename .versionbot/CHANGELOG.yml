@@ -1,4 +1,58 @@
 - commits:
+    - subject: Add dangerous-checkout to octoscan exclusions
+      hash: db2c066e7eeb9f21d1af277dc45971f6619ab634
+      body: |
+        This rule is now duplicated by CodeQL actions/untrusted-checkout/high
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+    - subject: Only generate a checkout token on private repositories
+      hash: 782c5aad936141c52f45dc4b9bccb00058d525e5
+      body: |
+        Public repositories should use the automatic github.token.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+    - subject: Revert to per-job versioned source checkout
+      hash: ea3740e1275cc48dfa37f78461d2a8ee98759f7a
+      body: |
+        Unfortunately artifact download on self-hosted runners is
+        very slow compared to git checkouts, so after some use in production
+        we decided to roll back this change.
+
+        Still we can use a dedicated token for the checkout step with fixed
+        permissions.
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+    - subject: Disable submodules for versioning checkout
+      hash: 46446122812d5fbc824d7d299527b7b6d1309739
+      body: |
+        We don't need submodules to run versionist so we can
+        save time and skip this.
+      footer:
+        CHange-type: patch
+        change-type: patch
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+  version: 20.4.0
+  title: ""
+  date: 2025-06-05T16:39:30.921Z
+- commits:
     - subject: Avoid full fetch depth for versioned source artifacts
       hash: d7a5309a71ce8b7610143c2ee0d1f257411ea297
       body: |
