@@ -130,10 +130,13 @@
         });
         return ref;
 
+  # Only generate a token if the repository is private and the app_id is set.
+  # This is to avoid generating a token for public repositories where the automatic
+  # github.token is sufficient.
   - &getCheckoutToken # https://github.com/tibdex/github-app-token
     name: Generate GitHub App installation token for checkout
     uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a # v2.1.0
-    if: inputs.app_id
+    if: inputs.app_id && github.event.repository.private
     id: checkout_token
     with:
       app_id: ${{ inputs.app_id }}
@@ -147,7 +150,7 @@
         }
 
   - &checkoutAuth
-    token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+    token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
     persist-credentials: false
 
   # Checkout the versioned commit we created in the previous steps.

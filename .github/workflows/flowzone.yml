@@ -445,7 +445,7 @@ jobs:
               "See: https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets");
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -464,7 +464,7 @@ jobs:
           fetch-depth: 0
           submodules: "false"
           ref: ${{ github.event.pull_request.head.sha || '¯\_(ツ)_/¯' }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - if: github.event.pull_request.state != 'open'
         name: Checkout ${{ github.sha }}
@@ -473,7 +473,7 @@ jobs:
           fetch-depth: 0
           submodules: "false"
           ref: ${{ github.sha || '¯\_(ツ)_/¯' }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Describe git state
         id: git_describe
@@ -1032,7 +1032,7 @@ jobs:
     steps:
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -1052,7 +1052,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -1086,7 +1086,7 @@ jobs:
     steps:
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -1106,7 +1106,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -1227,7 +1227,7 @@ jobs:
     steps:
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -1247,7 +1247,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -1295,7 +1295,7 @@ jobs:
     steps:
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -1315,7 +1315,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -1444,7 +1444,7 @@ jobs:
     steps:
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -1464,7 +1464,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -1713,7 +1713,7 @@ jobs:
     steps:
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -1733,7 +1733,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -1824,7 +1824,7 @@ jobs:
     steps:
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -1844,7 +1844,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -1901,7 +1901,7 @@ jobs:
     steps:
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -1921,7 +1921,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -1967,7 +1967,7 @@ jobs:
     steps:
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -1987,7 +1987,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -2142,7 +2142,7 @@ jobs:
     steps:
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -2162,7 +2162,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -2350,7 +2350,7 @@ jobs:
     steps:
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -2370,7 +2370,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -2482,7 +2482,7 @@ jobs:
     steps:
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -2502,7 +2502,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -2723,7 +2723,7 @@ jobs:
     steps:
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -2743,7 +2743,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -3261,7 +3261,7 @@ jobs:
     steps:
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -3281,7 +3281,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -3502,7 +3502,7 @@ jobs:
     steps:
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -3522,7 +3522,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -3579,7 +3579,7 @@ jobs:
     steps:
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -3599,7 +3599,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -3678,7 +3678,7 @@ jobs:
     steps:
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -3698,7 +3698,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -3773,7 +3773,7 @@ jobs:
     steps:
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -3793,7 +3793,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -3854,7 +3854,7 @@ jobs:
     steps:
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -3874,7 +3874,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -3924,7 +3924,7 @@ jobs:
     steps:
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -3944,7 +3944,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -4088,7 +4088,7 @@ jobs:
     steps:
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -4108,7 +4108,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -4187,7 +4187,7 @@ jobs:
     steps:
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -4207,7 +4207,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -4292,7 +4292,7 @@ jobs:
     steps:
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -4312,7 +4312,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -4368,7 +4368,7 @@ jobs:
     steps:
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -4388,7 +4388,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -4460,7 +4460,7 @@ jobs:
     steps:
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -4480,7 +4480,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -4529,7 +4529,7 @@ jobs:
     steps:
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -4549,7 +4549,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -4596,7 +4596,7 @@ jobs:
           exit 1
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -4616,7 +4616,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -4691,7 +4691,7 @@ jobs:
           exit 1
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -4711,7 +4711,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -4780,7 +4780,7 @@ jobs:
           exit 1
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -4800,7 +4800,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -4870,7 +4870,7 @@ jobs:
           exit 1
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -4890,7 +4890,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -4955,7 +4955,7 @@ jobs:
           exit 1
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -4975,7 +4975,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
@@ -5042,7 +5042,7 @@ jobs:
     steps:
       - name: Generate GitHub App installation token for checkout
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a
-        if: inputs.app_id
+        if: inputs.app_id && github.event.repository.private
         id: checkout_token
         with:
           app_id: ${{ inputs.app_id }}
@@ -5062,7 +5062,7 @@ jobs:
           fetch-tags: false
           submodules: recursive
           ref: ${{ needs.versioned_source.outputs.sha }}
-          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN }}
+          token: ${{ steps.checkout_token.outputs.token || secrets.FLOWZONE_TOKEN || github.token }}
           persist-credentials: false
       - name: Update versioned tag reference
         if: needs.versioned_source.outputs.tag && needs.versioned_source.outputs.tag_sha
